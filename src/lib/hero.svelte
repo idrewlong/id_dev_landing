@@ -4,7 +4,7 @@
       let Id = '/IDLOGO.png';
       let Linkedin = '/linkedin.svg';
       let Guy = '/computer.webp';
-      let slide1 = "a new Website";
+      let slide1 = "a new Website?";
       let slide2 = "Logo";
       let slide3 = "Branding";
       let currentIndex = 1;
