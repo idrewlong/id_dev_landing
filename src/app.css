@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.hero_container {
+	@apply container mx-auto h-screen flex flex-col md:flex-row justify-between items-center my-6 pt-6;
+}
+
+.coming_soon {
+	@apply hidden font-medium bg-slate-100 text-slate-900 uppercase px-3 md:flex justify-center rounded-3xl py-2 w-48;
+}
+
+.email {
+	@apply border border-gray-200 rounded-lg focus:outline-none focus:shadow-xl shadow-sm px-4 py-4 flex flex-row;
+}
+
+.button {
+	@apply px-6 py-3 bg-gradient-to-r from-orange-200 to-orange-400 rounded-lg hover:opacity-70 duration-300 transition text-slate-50 shadow-xl font-medium;
+}
