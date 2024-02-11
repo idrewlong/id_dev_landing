@@ -43,8 +43,7 @@
           <p class="text-6xl md:text-7xl font-bold text-center md:text-left py-2">Interested in<br><span class="text-orange-400">{slide1}</span></p>
           <p class="text-base text-center md:text-left">Click below to email us and we'll reach out to your inquiry!</p>
           <div class="flex justify-center md:justify-start">
-              <button class="button my-2"><a href = "mailto:idrewlong@gmail.com">Send Email</a>
-              </button>
+              <a href = "mailto:idrewlong@gmail.com" class="button my-2">Send Email</a>
           </div>
         </div>
         <div class="md:w-1/2 flex justify-center">
