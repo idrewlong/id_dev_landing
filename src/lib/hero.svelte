@@ -1,34 +1,24 @@
 <script>
       import { onMount, onDestroy } from 'svelte';
     
-      let Id = '/IDLOGO.png';
-      let Linkedin = '/linkedin.svg';
-      let Guy = '/computer.webp';
-      let slide1 = "a new Website?";
-      let slide2 = "Logo";
-      let slide3 = "Branding";
-      let currentIndex = 1;
+      let slides = [
+        { text: "a Website?", duration: 3000 }, // 4 seconds
+        { text: "a Logo?", duration: 3000 },    // 3 seconds
+        { text: "Branding?", duration: 3000 },  // 2.5 seconds
+        { text: "Marketing?", duration: 3000 }  // 3.5 seconds
+      ];
+    
+      let currentIndex = 0;
       let intervalId;
+      const intervalDuration = 2000; // Default interval duration
     
       function replaceWord() {
-        if (currentIndex === 1) {
-          slide1 = "a new Website?";
-          slide2 = "a new Logo?";
-          slide3 = "Branding?";
-        } else if (currentIndex === 2) {
-          slide1 = "a new Logo?";
-          slide2 = "Branding?";
-          slide3 = "a new Website?";
-        } else {
-          slide1 = "Branding?";
-          slide2 = "a new Website?";
-          slide3 = "a new Logo?";
-        }
-        currentIndex = currentIndex % 3 + 1;
+        currentIndex = (currentIndex + 1) % slides.length;
       }
     
       onMount(() => {
-        intervalId = setInterval(replaceWord, 2000);
+        // Start the interval immediately upon mounting
+        intervalId = setInterval(replaceWord, intervalDuration);
       });
     
       onDestroy(() => {
@@ -36,11 +26,14 @@
       });
     </script>
     
+    
+    
+    
     <div class="overflow-hidden">
       <div class="hero_container flex flex-col md:flex-row items-center justify-center">
         <div class="md:w-1/2 px-6 md:px-0">
           <p class="coming_soon text-center text-sm md:text-left">Website Coming soon</p>
-          <p class="text-6xl md:text-7xl font-bold text-center md:text-left py-2">Interested in<br><span class="text-orange-400">{slide1}</span></p>
+          <p class="text-6xl md:text-7xl font-bold text-center md:text-left py-2">Interested in<br><span class="text-orange-400">{slides[currentIndex].text}</span></p>
           <p class="text-base text-center md:text-left">Click below to email us and we'll reach out to your inquiry!</p>
           <div class="flex justify-center md:justify-start">
               <a href = "mailto:idrewlong@gmail.com" class="button my-2">Send Email</a>
